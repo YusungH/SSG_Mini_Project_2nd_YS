@@ -8,22 +8,22 @@
                         <div class="navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=top">top</a>
+                                    <a class="nav-link" href="main?gCategory=top">식품</a>
                                 </li>
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=dress">dress</a>
+                                    <a class="nav-link" href="main?gCategory=dress">음료</a>
                                 </li>
                             </ul>
                               <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=outer">outer</a>
+                                    <a class="nav-link" href="main?gCategory=outer">과일</a>
                                 </li>
                             </ul>
                               <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=bottom">bottom</a>
+                                    <a class="nav-link" href="main?gCategory=bottom">야채</a>
                                 </li>
                             </ul>
                         </div>

@@ -30,7 +30,7 @@
                      <sec:authorize access="isAuthenticated()">   
                         <ul class="navbar-nav">
                              <li class="nav-item">
-                              안녕하세요. ${login.username}님
+                            ${login.username}
                             </li>
                             <li class="nav-item">
                                <a class="nav-link" href="logout">Logout</a>

@@ -1,93 +1,90 @@
 package com.exam.dto;
 
-import org.apache.ibatis.type.Alias;
+import lombok.Data;
 
-/*
- 
-   create table goods
-   ( gCode varchar(20) PRIMARY KEY, -- 상품코드
-     gCategory varchar(20) not null,
-     gName varchar(50) not null,
-     gContent varchar(4000) not null,
-     gPrice INT not null,
-     gImage varchar(20) not null );
- 
- */
-
-@Alias("GoodsDTO")
 public class GoodsDTO {
 	
-	String gCode;
-	String gCategory;
-	String gName;
-	String gContent;
-	int gPrice;
-	String gImage;
-	
-	public GoodsDTO() {}
+    String gCode;
+    String gCategory;
+    String gName;
+    String gContent;
+    int gPrice;
+    String gImage;
+    int stock;  // 추가된 재고 정보 필드
+    
+    public GoodsDTO() {}
 
-	public GoodsDTO(String gCode, String gCategory, String gName, String gContent, int gPrice, String gImage) {
-		super();
-		this.gCode = gCode;
-		this.gCategory = gCategory;
-		this.gName = gName;
-		this.gContent = gContent;
-		this.gPrice = gPrice;
-		this.gImage = gImage;
-	}
+    public GoodsDTO(String gCode, String gCategory, String gName, String gContent, int gPrice, String gImage, int stock) {
+        super();
+        this.gCode = gCode;
+        this.gCategory = gCategory;
+        this.gName = gName;
+        this.gContent = gContent;
+        this.gPrice = gPrice;
+        this.gImage = gImage;
+        this.stock = stock;
+    }
 
-	public String getgCode() {
-		return gCode;
-	}
+    public String getgCode() {
+        return gCode;
+    }
 
-	public void setgCode(String gCode) {
-		this.gCode = gCode;
-	}
+    public void setgCode(String gCode) {
+        this.gCode = gCode;
+    }
 
-	public String getgCategory() {
-		return gCategory;
-	}
+    public String getgCategory() {
+        return gCategory;
+    }
 
-	public void setgCategory(String gCategory) {
-		this.gCategory = gCategory;
-	}
+    public void setgCategory(String gCategory) {
+        this.gCategory = gCategory;
+    }
 
-	public String getgName() {
-		return gName;
-	}
+    public String getgName() {
+        return gName;
+    }
 
-	public void setgName(String gName) {
-		this.gName = gName;
-	}
+    public void setgName(String gName) {
+        this.gName = gName;
+    }
 
-	public String getgContent() {
-		return gContent;
-	}
+    public String getgContent() {
+        return gContent;
+    }
 
-	public void setgContent(String gContent) {
-		this.gContent = gContent;
-	}
+    public void setgContent(String gContent) {
+        this.gContent = gContent;
+    }
 
-	public int getgPrice() {
-		return gPrice;
-	}
+    public int getgPrice() {
+        return gPrice;
+    }
 
-	public void setgPrice(int gPrice) {
-		this.gPrice = gPrice;
-	}
+    public void setgPrice(int gPrice) {
+        this.gPrice = gPrice;
+    }
 
-	public String getgImage() {
-		return gImage;
-	}
+    public String getgImage() {
+        return gImage;
+    }
 
-	public void setgImage(String gImage) {
-		this.gImage = gImage;
-	}
+    public void setgImage(String gImage) {
+        this.gImage = gImage;
+    }
 
-	@Override
-	public String toString() {
-		return "GoodsDTO [gCode=" + gCode + ", gCategory=" + gCategory + ", gName=" + gName + ", gContent=" + gContent
-				+ ", gPrice=" + gPrice + ", gImage=" + gImage + "]";
-	}
+    // 추가된 getter 및 setter
+    public int getStock() {
+        return stock;
+    }
 
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return "GoodsDTO [gCode=" + gCode + ", gCategory=" + gCategory + ", gName=" + gName + ", gContent=" + gContent
+                + ", gPrice=" + gPrice + ", gImage=" + gImage + ", stock=" + stock + "]";
+    }
 }

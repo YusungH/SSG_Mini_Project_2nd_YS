@@ -13,5 +13,6 @@ public interface CartMapper {
 	public List<CartDTO> cartList(String userid);
 	public int cartDelete(int num);
 	public int cartDeleteAll(List<String> list);
-	
+	public List<String> getCartItems();
+
 }

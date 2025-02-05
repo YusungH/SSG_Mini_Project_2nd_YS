@@ -13,7 +13,7 @@
 	  </a>
        <div class="mt-4 fs-6">${dto.gName}</div>
        <div class="mt-2 fs-6">${dto.gContent}</div>
-       <div class="mt-2 fs-6">${dto.gPrice}</div>
+       <div class="mt-2 fs-6">${dto.gPrice} 원 </div>
     </div>
   </c:forEach>  
 
