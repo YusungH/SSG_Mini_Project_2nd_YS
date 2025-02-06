@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
+<%@ page import="com.exam.dto.GoodsDTO" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +63,12 @@
     .notification-popup ul li {
         margin-bottom: 5px;
     }
+
+    /* 재고가 부족한 상품 강조 */
+    .low-stock {
+        color: red;
+        font-weight: bold;
+    }
 </style>
 <link rel="stylesheet" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
@@ -95,18 +103,24 @@
         <strong>⚠ 재고 부족 알림</strong><br>
         <ul>
             <% 
-                List<String> lowStockItems = (List<String>) session.getAttribute("lowStockItems");
-                if (lowStockItems != null && !lowStockItems.isEmpty()) {
-                    for (String item : lowStockItems) {
+            // goodsList를 받아와서 알림 표시
+            List<GoodsDTO> allItems = (List<GoodsDTO>) request.getAttribute("goodsList");
+
+            if (allItems == null || allItems.isEmpty()) {
             %>
-                <li><%= item %>의 재고가 부족합니다!</li>
+                <li>현재 상품이 없습니다!</li>
             <% 
-                    }
-                } else {
+            } else {
+                // 모든 상품을 표시
+                for (GoodsDTO goods : allItems) {
+                    String lowStockClass = (goods.getStock() <= 10) ? "low-stock" : ""; // 재고가 10개 이하인 경우 강조
             %>
-                <li>현재 재고가 부족한 상품이 없습니다.</li>
+                <li class="<%= lowStockClass %>">
+                    <%= goods.getgName() %> (재고: <%= goods.getStock() %>개)
+                </li>
             <% 
                 }
+            }
             %>
         </ul>
     </div>

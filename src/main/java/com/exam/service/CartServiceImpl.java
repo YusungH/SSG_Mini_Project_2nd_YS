@@ -1,6 +1,5 @@
 package com.exam.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,24 +42,14 @@ public class CartServiceImpl implements CartService {
     }
 
     // 장바구니에 담겨 있는 상품 중에서 재고가 10개 이하인 상품을 확인하는 메서드
+    @Override
     public List<CartDTO> getLowStockItems(String userid) {
-        // 사용자가 장바구니에 담은 상품 리스트 가져오기
-        List<CartDTO> cartItems = mapper.cartList(userid);
-        List<CartDTO> lowStockItems = new ArrayList<>();
+        // mapper에서 이미 재고 부족 상품을 가져오는 쿼리 처리
+        return mapper.getLowStockItems(userid);
+    }
 
-     
-        // 장바구니에 담긴 각 상품의 재고 상태를 확인
-        for (CartDTO item : cartItems) {
-            for (GoodsDTO goods : item.getGoodsList()) {
-             if (goods.getStock() <= 10) {  // 재고가 10개 이하인 상품을 lowStockItems 리스트에 추가
-            	// if (test <= 10) {    
-            	lowStockItems.add(item);
-            	//test++;
-                    break; // 하나라도 10개 이하인 물품이 있으면 해당 CartDTO를 추가하고 더 이상 확인하지 않음
-                }
-            }
-        }
-
-        return lowStockItems;
+    @Override
+    public List<GoodsDTO> getAllStock() {
+        return mapper.getAllStock();
     }
 }

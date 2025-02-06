@@ -11,6 +11,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="main">Home</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="refrigerator">내 냉장고</a>
+                                </li>
                             </ul>
                         </div>
                         

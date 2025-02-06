@@ -16,7 +16,8 @@ public class StockService {
         this.stockDAO = stockDAO;
     }
 
+    // 재고 부족 상품 목록 가져오기
     public List<String> getLowStockItems() {
-        return stockDAO.getLowStockItems();
+        return stockDAO.getLowStockItems();  // DAO에서 불러오는 메서드를 호출
     }
 }

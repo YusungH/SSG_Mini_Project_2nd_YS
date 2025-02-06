@@ -28,4 +28,11 @@ public class GoodsServiceImpl implements GoodsService{
 		return mapper.goodsRetrieve(gCode);
 	}
 
+
+	@Override
+	public List<GoodsDTO> getAllStock() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

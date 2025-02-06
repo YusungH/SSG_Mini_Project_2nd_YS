@@ -2,22 +2,21 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.exam.mapper.CartMapper">
+<mapper namespace="com.exam.mapper.RefrigeratorMapper">
    
 	 
-	 <insert id="cartAdd" parameterType="CartDTO">
-	   insert into cart (userid, gCode, gSize, gColor, gAmount)
-	   values ( #{userid}, #{gCode}, #{gSize}, #{gColor}, #{gAmount})
+	 <insert id="refrigeratorAdd" parameterType="RefrigeratorDTO">
+	   insert into refrigerator (gCode, gCategory, gName, rStock)
+	   values ( #{gCode}, #{gCategory}, #{gName}, #{rStock})
 	 </insert>
 	 
-	 <resultMap id="userResultMap" type="CartDTO">
+	 <resultMap id="refrigeratorResultMap" type="RefrigeratorDTO">
 		 <id     property="num" column="num" />
 		 <result property="userid" column="userid"/>
 		 <result property="gCode" column="gCode"/>
-		 <result property="gSize" column="gSize"/>
-		 <result property="gColor" column="gColor"/>
-		 <result property="gAmount" column="gAmount"/>
-		 <result property="gCartDate" column="gCartDate"/>
+		 <result property="gCategory" column="gCategory"/>
+		 <result property="gName" column="gName"/>
+		 <result property="rStock" column="rStock"/>
 	     
 	 	 <!--  GoodsDTO 데이터 저장 -->
 	 	 <collection property="goodsList" ofType="GoodsDTO">
@@ -30,7 +29,7 @@
          </collection>
 	 </resultMap>
 	 
-	 <select id="cartList" resultMap="userResultMap" parameterType="string">
+	 <select id="refrigeratorList" resultMap="refrigeratorResultMap" parameterType="string">
 	    select *
 		from cart join goods on cart.gCode = goods.gCode
 		where userid = #{userid}
@@ -43,15 +42,6 @@
 		where num = #{num}
 	 </delete>
 	 
-    <select id="getLowStockItems" parameterType="String" resultType="com.exam.dto.CartDTO">
-        SELECT * 
-        FROM goods
-        WHERE gName = #{gName} AND 10 >stock ;
-    </select>
-    <select id="getAllStock" resultType="com.exam.dto.GoodsDTO">
-    SELECT * FROM goods;
-</select>
-    
 	   <!-- 
 	      멀티 delete
           mysql sql문:
@@ -80,7 +70,7 @@
             </foreach>
 		</where>
 	 </delete>
-	
+	 
 	 
 	 
 </mapper>

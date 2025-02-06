@@ -11,25 +11,21 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.exam.dto.GoodsDTO;
 import com.exam.service.GoodsService;
 
+
 @Controller
 public class MainController {
 
-	GoodsService service;
-	
-	public MainController(GoodsService service) {
-		this.service = service;
-	}
+    GoodsService service;
+    
+    public MainController(GoodsService service) {
+        this.service = service;
+    }
 
-
-	@GetMapping("/main") //main.jsp
-	@ModelAttribute("goodsList")
-	public List<GoodsDTO> main(@RequestParam(required = false, defaultValue = "유제품")
-	                    String gCategory) {
-		
-		// JSP에서 보여줄 데이터고 모델에 저장해야 된다.
-		List<GoodsDTO> list = service.goodsList(gCategory);
-		
-		return list;
-	}
-	
+    @GetMapping("/main") // main.jsp
+    @ModelAttribute("goodsList")
+    public List<GoodsDTO> main(@RequestParam(required = false, defaultValue = "Dairy") String gCategory) {
+        // JSP에서 보여줄 데이터고 모델에 저장해야 된다.
+        List<GoodsDTO> list = service.goodsList(gCategory);
+        return list;
+    }
 }
