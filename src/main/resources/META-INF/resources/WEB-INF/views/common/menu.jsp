@@ -8,22 +8,22 @@
                         <div class="navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=top">유제품</a>
+                                    <a class="nav-link" href="main?gCategory=Dairy">유제품</a>
                                 </li>
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=dress">음료</a>
+                                    <a class="nav-link" href="main?gCategory=Meat">육류</a>
                                 </li>
                             </ul>
                               <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=outer">과일</a>
+                                    <a class="nav-link" href="main?gCategory=Fruit">과일</a>
                                 </li>
                             </ul>
                               <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=bottom">야채</a>
+                                    <a class="nav-link" href="main?gCategory=Vegetable">야채</a>
                                 </li>
                             </ul>
                         </div>

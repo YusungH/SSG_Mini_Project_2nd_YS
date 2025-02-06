@@ -24,7 +24,7 @@
                     <tbody>
 						 <tr>
 					                <td>${cDTO.num}</td> 
-                                    <td><img src="images/items/${cDTO.goodsList[0].gImage}.gif" width="50" height="50" ></td>
+                                    <td><img src="images/items/${cDTO.goodsList[0].gImage}.png" width="50" height="50" ></td>
                                     <td>${cDTO.gCode}&nbsp;/&nbsp;${cDTO.gSize}&nbsp;/&nbsp;${cDTO.gColor}</td>
                                     <td>${cDTO.goodsList[0].gPrice}</td>
                                     <td>${cDTO.gAmount}</td>

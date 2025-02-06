@@ -48,14 +48,14 @@ public class CartServiceImpl implements CartService {
         List<CartDTO> cartItems = mapper.cartList(userid);
         List<CartDTO> lowStockItems = new ArrayList<>();
 
-        int test = 0;
+     
         // 장바구니에 담긴 각 상품의 재고 상태를 확인
         for (CartDTO item : cartItems) {
             for (GoodsDTO goods : item.getGoodsList()) {
-             //   if (goods.getStock() <= 10) {  // 재고가 10개 이하인 상품을 lowStockItems 리스트에 추가
-            	 if (test <= 10) {    
+             if (goods.getStock() <= 10) {  // 재고가 10개 이하인 상품을 lowStockItems 리스트에 추가
+            	// if (test <= 10) {    
             	lowStockItems.add(item);
-            	test++;
+            	//test++;
                     break; // 하나라도 10개 이하인 물품이 있으면 해당 CartDTO를 추가하고 더 이상 확인하지 않음
                 }
             }
