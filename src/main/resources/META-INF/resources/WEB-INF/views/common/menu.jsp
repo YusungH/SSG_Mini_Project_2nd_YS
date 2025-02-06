@@ -8,7 +8,7 @@
                         <div class="navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main?gCategory=top">식품</a>
+                                    <a class="nav-link" href="main?gCategory=top">유제품</a>
                                 </li>
                             </ul>
                             <ul class="navbar-nav">

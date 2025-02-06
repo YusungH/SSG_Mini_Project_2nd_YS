@@ -5,19 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.type.Alias;
 
-/*
- 
-  create table cart
-  (  num INT PRIMARY KEY AUTO_INCREMENT,
-     userid VARCHAR(20),
-     gCode varchar(20) not null,
-     gSize CHAR(1) not null,
-     gColor VARCHAR(10) not null,
-     gAmount INT not null,
-     gCartDate DATE DEFAULT (current_date)
-  );   
- 
- */
+
 @Alias("CartDTO")
 public class CartDTO {
 	
