@@ -42,10 +42,8 @@ public class CartController {
 
 	@GetMapping("/cartAdd")
 	public String cartAdd( @RequestParam String gCode,
-				           @RequestParam String gSize,
-			               @RequestParam  String gColor,
-			               
-			               @Size(min = 1, max = 2)
+				    
+			              
 					      // @Size 적용가능한 타입: 문자열, 컬렉션, 배열
 			               @RequestParam  String gAmount,
 			               
@@ -67,8 +65,7 @@ public class CartController {
 		CartDTO cartDTO = new CartDTO();
 		cartDTO.setUserid(userid);
 		cartDTO.setgCode(gCode);
-		cartDTO.setgSize(gSize);
-		cartDTO.setgColor(gColor);
+	
 		cartDTO.setgAmount( Integer.parseInt(gAmount));
 		
 		int n = cartService.cartAdd(cartDTO);

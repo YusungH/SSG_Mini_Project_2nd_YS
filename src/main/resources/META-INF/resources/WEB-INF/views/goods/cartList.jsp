@@ -42,11 +42,11 @@
                                     <input type="checkbox" name="allCheck" id="allCheck"></th>
                                 <th>번호</th>
                                 <th>상품이미지</th>
-                                <th>상품정보</th>
                                 <th>상품가격</th>
                                 <th>상품수량</th>
                                 <th>합계</th>
                                 <th>날짜</th>
+                            
                                 <th>Delete</th>
                                 <th>주문</th>
                             </tr>
@@ -61,8 +61,8 @@
 	<input type="checkbox" name="check"  class="check" value="${cartDTO.num}">
 						            </td> 
 					                <td>${cartDTO.num}</td> 
-                                    <td><img src="images/items/${cartDTO.goodsList[0].gImage}.gif" width="50" height="50" ></td>
-                                    <td>${cartDTO.gCode}&nbsp;&nbsp;${cartDTO.gSize}&nbsp;/&nbsp;${cartDTO.gColor}</td>
+                                    <td><img src="images/items/${cartDTO.goodsList[0].gImage}.png" width="50" height="50" ></td>
+                                   
                                     <td>${cartDTO.goodsList[0].gPrice}</td>
                                     <td>${cartDTO.gAmount}</td>
                                     <td>${cartDTO.goodsList[0].gPrice * cartDTO.gAmount    }</td>

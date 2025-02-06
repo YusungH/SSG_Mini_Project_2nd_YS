@@ -6,16 +6,14 @@
    
 	 
 	 <insert id="cartAdd" parameterType="CartDTO">
-	   insert into cart (userid, gCode, gSize, gColor, gAmount)
-	   values ( #{userid}, #{gCode}, #{gSize}, #{gColor}, #{gAmount})
+	   insert into cart (userid, gCode, gAmount)
+	   values ( #{userid}, #{gCode},  #{gAmount})
 	 </insert>
 	 
 	 <resultMap id="userResultMap" type="CartDTO">
 		 <id     property="num" column="num" />
 		 <result property="userid" column="userid"/>
 		 <result property="gCode" column="gCode"/>
-		 <result property="gSize" column="gSize"/>
-		 <result property="gColor" column="gColor"/>
 		 <result property="gAmount" column="gAmount"/>
 		 <result property="gCartDate" column="gCartDate"/>
 	     
