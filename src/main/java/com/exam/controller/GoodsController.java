@@ -1,20 +1,18 @@
 package com.exam.controller;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.exam.dto.GoodsDTO;
-import com.exam.dto.MemberDTO;
 import com.exam.service.GoodsService;
-import com.exam.service.MemberService;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @SessionAttributes("gCode")
@@ -53,6 +51,7 @@ public class GoodsController {
 		return mav;
 	}
 	
+
 }
 
 

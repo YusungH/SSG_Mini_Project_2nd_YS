@@ -48,9 +48,13 @@
         FROM goods
         WHERE gName = #{gName} AND 10 >stock ;
     </select>
+    
     <select id="getAllStock" resultType="com.exam.dto.GoodsDTO">
     SELECT * FROM goods;
 </select>
+
+
+
     
 	   <!-- 
 	      멀티 delete

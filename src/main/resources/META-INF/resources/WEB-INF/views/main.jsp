@@ -102,27 +102,26 @@
     <div id="notificationPopup" class="notification-popup">
         <strong>⚠ 재고 부족 알림</strong><br>
         <ul>
-            <% 
-            // goodsList를 받아와서 알림 표시
-            List<GoodsDTO> allItems = (List<GoodsDTO>) request.getAttribute("goodsList");
+   <% 
+    List<GoodsDTO> allItems = (List<GoodsDTO>) request.getAttribute("allStock");
 
-            if (allItems == null || allItems.isEmpty()) {
-            %>
-                <li>현재 상품이 없습니다!</li>
-            <% 
-            } else {
-                // 모든 상품을 표시
-                for (GoodsDTO goods : allItems) {
-                    String lowStockClass = (goods.getStock() <= 10) ? "low-stock" : ""; // 재고가 10개 이하인 경우 강조
-            %>
-                <li class="<%= lowStockClass %>">
-                    <%= goods.getgName() %> (재고: <%= goods.getStock() %>개)
-                </li>
-            <% 
-                }
-            }
-            %>
-        </ul>
+    if (allItems == null || allItems.isEmpty()) {
+%>
+    <li>현재 상품이 없습니다!</li>
+<% 
+    } else {
+        for (GoodsDTO goods : allItems) {
+            String lowStockClass = (goods.getStock() <= 10) ? "low-stock" : ""; // 재고가 10개 이하인 경우 강조
+%>
+    <li class="<%= lowStockClass %>">
+        <%= goods.getgName() %> (재고: <%= goods.getStock() %>개)
+    </li>
+<% 
+        }
+    }
+%>
+
+</ul>
     </div>
 
     <jsp:include page="goods/goodsList.jsp" flush="true" />
