@@ -25,7 +25,7 @@ public class RefrigeratorController {
 	}
     
     
-    // 전체 냉장고 목록 보기 (임시)
+    // 전체 냉장고 목록 보기
     @GetMapping("/refrigerator") //main.jsp
 	public String main() {
 		return "refrigerator";
@@ -57,6 +57,15 @@ public class RefrigeratorController {
     	int n = refrigeratorService.refrigeratorAdd(refrigeratorDTO);
     	
     	return "/refrigeratorAddSuccess";
+    }
+    
+    // 식재료 삭제
+    @GetMapping("refrigeratorDelete")
+    public String refrigeratorDelete(@RequestParam Integer num) {
+    	
+    	int n = refrigeratorService.refrigeratorDelete(num);
+    	
+    	return "redirect:refrigeratorList";
     }
     
     
