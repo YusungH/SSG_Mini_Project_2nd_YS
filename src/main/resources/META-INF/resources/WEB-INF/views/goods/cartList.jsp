@@ -63,9 +63,9 @@
 					                <td>${cartDTO.num}</td> 
                                     <td><img src="images/items/${cartDTO.goodsList[0].gImage}.png" width="50" height="50" ></td>
                                    
-                                    <td>${cartDTO.goodsList[0].gPrice}</td>
+                                    <td>${cartDTO.goodsList[0].gPrice} 원 </td>
                                     <td>${cartDTO.gAmount}</td>
-                                    <td>${cartDTO.goodsList[0].gPrice * cartDTO.gAmount    }</td>
+                                    <td>${cartDTO.goodsList[0].gPrice * cartDTO.gAmount    } 원 </td>
                                     <td>${cartDTO.gCartDate}</td>
                                     <td> <a href="cartDelete?num=${cartDTO.num}" class="btn btn-warning" >Delete</a> </td>
                                     <td> <a href="orderConfirm?num=${cartDTO.num}" class="btn btn-success" >주문</a> </td>
@@ -79,7 +79,7 @@
 					      <td></td>
 					      <td></td>
 					      <td></td>
-					      <td colspan="3">총합: &nbsp; ${sum}</td>
+					      <td colspan="3">총합: &nbsp; ${sum} 원</td>
 					    </tr>
                     </tbody>
 

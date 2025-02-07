@@ -50,7 +50,7 @@
 		       ${goodsRetrieve.gName}</h6>
 		    <h6 class="card-text">
 		      <span class="fw-bold ">가격:</span>
-		       ${goodsRetrieve.gPrice}</h6>
+		       ${goodsRetrieve.gPrice} 원 </h6>
 	
 			 <h6 class="card-text">
 			 
