@@ -31,27 +31,17 @@
 	 
 	 <select id="refrigeratorList" resultMap="refrigeratorResultMap" parameterType="string">
 	    select *
-		from cart join goods on cart.gCode = goods.gCode
+		from refrigerator join goods on refrigerator.gCode = goods.gCode
 		where userid = #{userid}
 	    order by num
 	 </select>
 	 
 	 
-	 <delete id="cartDelete" parameterType="int">
-	    delete from cart
+	 <delete id="refrigeratorDelete" parameterType="int">
+	    delete from refrigerator
 		where num = #{num}
 	 </delete>
 
-	  <delete id="cartDeleteAll" parameterType="arraylist">
-	    delete from cart
-		<where>
-		    num IN
-		    <foreach item="item" collection="list"  separator="," open="(" close=")">
-                #{item} 
-            </foreach>
-		</where>
-	 </delete>
-	 
-	 
+
 	 
 </mapper>
