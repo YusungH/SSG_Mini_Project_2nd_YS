@@ -31,6 +31,32 @@
     }
 
     /* 알림 벨 아이콘 */
+    .App {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    label, input, button {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    footer {
+        bottom: 0;
+        position: absolute;
+        width: 90%;
+        height: 40px;
+    }
+
+    .alert {
+        background-color: #ffcccc;
+        color: #cc0000;
+        padding: 10px;
+        border: 1px solid #cc0000;
+        margin-bottom: 10px;
+    }
+
+    /* 벨 아이콘 스타일 */
     .notification-icon {
         position: fixed;
         top: 20px;
@@ -68,7 +94,6 @@
         font-weight: bold;
     }
 </style>
-
 <link rel="stylesheet" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <!-- Font Awesome (벨 아이콘) -->
@@ -97,7 +122,7 @@
 
     <!-- 벨 아이콘 -->
     <div class="notification-icon" onclick="toggleNotification()">
-        <i class="fas fa-bell"></i>
+        <i class="fas fa-bell"></i> <!-- Font Awesome 벨 아이콘 -->
     </div>
 
     <!-- 알림 팝업 -->
@@ -127,6 +152,5 @@
 
     <jsp:include page="goods/goodsList.jsp" flush="true" />
 </div>
-
 </body>
 </html>

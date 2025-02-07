@@ -29,5 +29,3 @@ insert into goods (gCode, gCategory, gName, gContent, gPrice, gImage) values ("S
 insert into goods (gCode, gCategory, gName, gContent, gPrice, gImage) values ("SN-0002", "Snack", "감자칩", "노브랜드 감자칩 사워크림&어니언 160g", 1480, "SN-0002");
 insert into goods (gCode, gCategory, gName, gContent, gPrice, gImage) values ("FZ-0001", "Frozen", "군만두", "노브랜드 군만두 1000g", 4980, "FZ-0001");
 insert into goods (gCode, gCategory, gName, gContent, gPrice, gImage) values ("FZ-0002", "Frozen", "감자튀김", "피코크 케이준프라이 700g", 8980, "FZ-0002");
-
-commit;
