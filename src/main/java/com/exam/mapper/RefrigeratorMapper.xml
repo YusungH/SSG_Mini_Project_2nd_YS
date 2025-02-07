@@ -41,26 +41,7 @@
 	    delete from cart
 		where num = #{num}
 	 </delete>
-	 
-	   <!-- 
-	      멀티 delete
-          mysql sql문:
-             delete from emp 
-             where empno IN ( 1001, 1002,.... )
-     
-      <delete id="deleteMulti" parameterType="arraylist">
-                delete from emp 
-                <where>
-                    empno IN
-                     <foreach item="item" collection="list"  separator="," open="(" close=")">
-                         #{item} 
-                     </foreach>
-                </where>
-	    </delete>
-	   
-	   delete from cart where num IN (4,5)
-	   
-	    -->
+
 	  <delete id="cartDeleteAll" parameterType="arraylist">
 	    delete from cart
 		<where>
