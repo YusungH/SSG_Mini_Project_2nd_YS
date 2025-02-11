@@ -50,6 +50,19 @@
 	<delete id="refrigeratorDelete" parameterType="int">
 		delete from refrigerator
 		where num = #{num}
-	</delete>
-
+	 </delete>
+	 
+	   
+	  <delete id="cartDeleteAll" parameterType="arraylist">
+	    delete from cart
+		<where>
+		    num IN
+		    <foreach item="item" collection="list"  separator="," open="(" close=")">
+                #{item} 
+            </foreach>
+		</where>
+	 </delete>
+	 
+	 
+	 
 </mapper>
