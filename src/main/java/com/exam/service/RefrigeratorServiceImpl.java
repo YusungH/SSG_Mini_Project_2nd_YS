@@ -1,7 +1,6 @@
 package com.exam.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,5 +43,15 @@ public class RefrigeratorServiceImpl implements RefrigeratorService {
    public int updateRefrigeratorStock(RefrigeratorDTO dto) {
       return mapper.updateRefrigeratorStock(dto);
    }
+
+	@Override
+	public List<RefrigeratorDTO> refrigeratorList(String userid) {
+		return mapper.refrigeratorList(userid);
+	}
+
+	@Override
+	public int refrigeratorDelete(int num) {
+		return mapper.refrigeratorDelete(num);
+	}
 
 }
