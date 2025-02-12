@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.exam.dto.GoodsDTO;
 import com.exam.dto.RefrigeratorDTO;
 import com.exam.mapper.RefrigeratorMapper;
 
@@ -20,6 +21,11 @@ public class RefrigeratorServiceImpl implements RefrigeratorService {
    @Override
    @Transactional
    public int refrigeratorAdd(RefrigeratorDTO dto) {
+	  int count = mapper.checkProductExist(dto);
+	  
+	  if (count > 0) {
+		  return 0;
+	}
       return mapper.refrigeratorAdd(dto);
    }
 
@@ -34,24 +40,14 @@ public class RefrigeratorServiceImpl implements RefrigeratorService {
    }
 
    @Override
-   public int getRefrigeratorStock(String userid, String gCode) {
-      return mapper.getRefrigeratorStock(userid, gCode);
-   }
-
-   @Override
    @Transactional
    public int updateRefrigeratorStock(RefrigeratorDTO dto) {
       return mapper.updateRefrigeratorStock(dto);
    }
 
-	@Override
-	public List<RefrigeratorDTO> refrigeratorList(String userid) {
-		return mapper.refrigeratorList(userid);
-	}
-
-	@Override
-	public int refrigeratorDelete(int num) {
-		return mapper.refrigeratorDelete(num);
-	}
-
+   @Override
+   public int refrigeratorDeleteAll(List<String> list) {
+	   return mapper.refrigeratorDeleteAll(list);
+   }
 }
+

@@ -1,5 +1,5 @@
 use team5;
-drop table cart;
+
 CREATE TABLE cart (
   num int NOT NULL AUTO_INCREMENT,
   userid varchar(20) DEFAULT NULL,
@@ -12,6 +12,3 @@ CREATE TABLE cart (
   CONSTRAINT cart_gCode_fk FOREIGN KEY (gCode) REFERENCES goods (gCode) ON DELETE CASCADE,
   CONSTRAINT cart_userid_fk FOREIGN KEY (userid) REFERENCES member (userid) ON DELETE CASCADE
 );
-use team5;
-SELECT * FROM refrigerator;
-SELECT * FROM team5.cart;

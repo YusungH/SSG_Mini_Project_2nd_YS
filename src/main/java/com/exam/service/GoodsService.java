@@ -3,6 +3,7 @@ package com.exam.service;
 import java.util.List;
 
 import com.exam.dto.GoodsDTO;
+import com.exam.dto.RefrigeratorDTO;
 
 public interface GoodsService {
 
@@ -14,4 +15,6 @@ public interface GoodsService {
 
     // 모든 상품의 재고 정보 조회
     public List<GoodsDTO> getAllStock();
+    
+    public List<RefrigeratorDTO> getAllrStock();
 }

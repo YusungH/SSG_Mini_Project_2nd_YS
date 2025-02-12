@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
->>.${cDTO}<br>
->>.${mDTO}<br>
 <form name="myForm" >
 	 <div class="container">
 	       <div class="row mb-3">
@@ -25,7 +23,7 @@
 						 <tr>
 					                <td>${cDTO.num}</td> 
                                     <td><img src="images/items/${cDTO.goodsList[0].gImage}.png" width="50" height="50" ></td>
-                                    <td>${cDTO.gCode}&nbsp;/&nbsp;${cDTO.gSize}&nbsp;/&nbsp;${cDTO.gColor}</td>
+                                    <td>${cDTO.gCode}</td>
                                     <td>${cDTO.goodsList[0].gPrice}</td>
                                     <td>${cDTO.gAmount}</td>
                                     <td>${cDTO.gAmount * cDTO.goodsList[0].gPrice }</td>

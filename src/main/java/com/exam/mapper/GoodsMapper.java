@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.exam.dto.GoodsDTO;
+import com.exam.dto.RefrigeratorDTO;
 
 @Mapper
 public interface GoodsMapper {
@@ -15,4 +16,7 @@ public interface GoodsMapper {
 
     // 모든 상품의 재고 정보 조회
 	public  List<GoodsDTO> getAllStock();
+	
+	  // 모든 상품의 재고 정보 조회
+		public  List<RefrigeratorDTO> getAllrStock();
 }

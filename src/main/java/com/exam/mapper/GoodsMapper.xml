@@ -33,12 +33,25 @@
     <select id="getAllStock" resultType="com.exam.dto.GoodsDTO">
         SELECT * FROM goods
     </select>
+    
+        <!-- 모든 상품의 재고 정보 조회 -->
+    <select id="getAllrStock" resultType="com.exam.dto.GoodsDTO">
+        SELECT * FROM refrigerator
+    </select>
 
     <!-- 재고가 10개 이하인 상품 조회 -->
     <select id="getLowStockItems" resultType="GoodsDTO" parameterType="string">
         select gName
         from goods
         where   10 > stock
+    </select>
+    
+        <!-- 재고가 10개 이하인 상품 조회 -->
+    <select id="getLowrStockItems" resultType="GoodsDTO" parameterType="string">
+        select gName
+        from refrigerator
+        where   10 > rStock
+        AND userId = #{userId} 
     </select>
 
 
