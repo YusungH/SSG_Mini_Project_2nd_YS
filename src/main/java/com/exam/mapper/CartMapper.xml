@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.CartMapper">
+
+	<insert id="cartAdd" parameterType="CartDTO">
+		insert into cart (userid, gCode, gAmount)
+		values ( #{userid}, #{gCode}, #{gAmount})
+	</insert>
+
+	<resultMap id="userResultMap" type="CartDTO">
+		<id property="num" column="num" />
+		<result property="userid" column="userid" />
+		<result property="gCode" column="gCode" />
+		<result property="gAmount" column="gAmount" />
+		<result property="gCartDate" column="gCartDate" />
+		<collection property="goodsList" ofType="GoodsDTO">
+			<id property="gCode" column="gCode" />
+			<result property="gCategory" column="gCategory" />
+			<result property="gName" column="gName" />
+			<result property="gContent" column="gContent" />
+			<result property="gPrice" column="gPrice" />
+			<result property="gImage" column="gImage" />
+		</collection>
+	</resultMap>
+
+	<select id="cartList" resultMap="userResultMap"
+		parameterType="string">
+		select *
+		from cart join goods on cart.gCode = goods.gCode
+		where userid =
+		#{userid}
+		order by num
+	</select>
+
+	<delete id="cartDelete" parameterType="int">
+		delete from cart
+		where num = #{num}
+	</delete>
+
+
+
+	<select id="getLowrStockItems" parameterType="String"
+		resultType="com.exam.dto.RefrigeratorDTO">
+		SELECT *
+		FROM refrigerator
+		WHERE 10 > rStock
+		AND userid = #{userId};
+
+	</select>
+
+	<select id="getAllStock" resultType="com.exam.dto.GoodsDTO">
+		SELECT * FROM goods;
+	</select>
+
+	<select id="getAllrStock"
+		resultType="com.exam.dto.RefrigeratorDTO">
+		SELECT * FROM refrigerator;
+	</select>
+
+	<delete id="cartDeleteAll" parameterType="arraylist">
+		delete from cart
+		<where>
+			num IN
+			<foreach item="item" collection="list" separator="," open="("
+				close=")">
+				#{item}
+			</foreach>
+		</where>
+	</delete>
+</mapper>

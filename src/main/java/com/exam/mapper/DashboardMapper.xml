@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.mapper.DashboardMapper">
+
+    <!-- 재고가 10개 이하인 상품 이름을 가져오는 쿼리 -->
+    <select id="getLowrStockItems" resultType="String" parameterType="String">
+        SELECT gName
+        FROM refrigerator
+        WHERE 10 > rStock
+    </select>
+
+</mapper>
