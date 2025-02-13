@@ -39,4 +39,9 @@ public class GoodsServiceImpl implements GoodsService {
 	public List<RefrigeratorDTO> getAllrStock() {
 		return mapper.getAllrStock(); // 모든 상품의 재고 정보를 가져오는 메서드
 	}
+	
+
+    public void addGoods(GoodsDTO goodsDTO) {
+       mapper.addGoods(goodsDTO); // Mapper로 전달하여 DB에 저장
+    }
 }

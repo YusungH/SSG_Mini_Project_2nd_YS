@@ -147,8 +147,8 @@
 
 <form>
 	<div class="TodoApp">
-		<div class="container">
-			<div>
+		<div class="container md-9">
+			<div class="">
 				<table class="table align-middle text-center">
 					<thead>
 						<tr>
@@ -179,7 +179,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
-				<div class="container">
+				<div class="col-12 d-flex justify-content-center">
 					<button class="btn btn-success" id="saveAll">변경사항 저장</button>
 					&nbsp;&nbsp;&nbsp;
 					<button class="btn btn-danger" id="deleteAll">선택 상품 삭제</button>

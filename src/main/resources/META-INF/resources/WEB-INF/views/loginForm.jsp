@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <title>메인홈페이지</title>
     <style type="text/css">
-        .App {
-            text-align: center;
-            font-size: 16px;
-        }
 
         label, input, button {
             margin: 10px;
@@ -28,7 +24,6 @@
 <body>
     <div class="App">
         <jsp:include page="common/top.jsp" flush="true" /><br>
-        <jsp:include page="common/menu.jsp" flush="true" />
         <hr>
         <jsp:include page="member/loginForm.jsp" flush="true" />
     </div>

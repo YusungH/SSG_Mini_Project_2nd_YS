@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.exam.dto.GoodsDTO, com.exam.dto.RefrigeratorDTO"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -21,6 +21,16 @@
 
         .notification-icon.low-stock {
             color: black; /* 재고 부족 시 아이콘 색상 변경 */
+        }
+
+        .add-goods-icon {
+            position: fixed;
+            top: 20px; /* 벨 아이콘 바로 위에 위치 */
+            right: 80px; /* 벨 아이콘과 겹치지 않게 위치 조정 */
+            font-size: 30px;
+            cursor: pointer;
+            color: green; /* + 아이콘 색상 */
+            z-index: 101; /* 벨 아이콘보다 앞에 오도록 설정 */
         }
 
         .notification-popup {
@@ -53,13 +63,11 @@
     </style>
 
     <!-- 부트스트랩 스타일과 JS -->
-    <link rel="stylesheet"
-          href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
     <script src="webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
     <!-- Font Awesome (벨 아이콘) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- 알림 토글 함수 -->
     <script>
@@ -81,7 +89,7 @@
         <div class="row">
 
             <!-- 왼쪽 사이드바(menu.jsp) -->
-            <div class="col-md-3">     
+            <div class="col-md-3">
                 <jsp:include page="common/menu.jsp" />
             </div>
 
@@ -92,7 +100,14 @@
         </div>
     </div>
 
-    <!-- 알림 아이콘 -->
+    <!-- + 아이콘: 상품 추가 링크 -->
+    <c:if test="${isAdmin}">
+        <a href="${pageContext.request.contextPath}/addGoods" class="add-goods-icon">
+            <i class="fas fa-plus"></i>
+        </a>
+    </c:if>
+
+    <!-- 벨 아이콘: 알림 클릭 시 팝업 표시 -->
     <div class="notification-icon <%=(request.getAttribute("hasLowrStock") != null && (boolean) request.getAttribute("hasLowrStock")) ? "low-stock" : ""%>"
          onclick="toggleNotification()">
         <i class="fas fa-bell"></i>
@@ -110,13 +125,10 @@
                 List<RefrigeratorDTO> lowrStockItems = null;
 
                 // lowrStockItems가 실제로 List<RefrigeratorDTO> 타입인지 확인
-               
                 if (lowrStockItemsObj instanceof List<?>) {
                     lowrStockItems = (List<RefrigeratorDTO>) lowrStockItemsObj;
-           
-                    
                 }
-              
+                
                 // 재고 부족 아이템이 없을 경우
                 if (lowrStockItems == null || lowrStockItems.isEmpty()) {
             %>

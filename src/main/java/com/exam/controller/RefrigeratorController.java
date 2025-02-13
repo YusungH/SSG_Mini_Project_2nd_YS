@@ -44,7 +44,8 @@ public class RefrigeratorController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		MemberDTO memberDTO = (MemberDTO) auth.getPrincipal();
 		String userid = memberDTO.getUserid();
-
+		m.addAttribute("login", memberDTO);
+		
 		List<RefrigeratorDTO> refrigeratorList = refrigeratorService.refrigeratorList(userid);
 		m.addAttribute("refrigeratorList", refrigeratorList);
 
@@ -63,7 +64,7 @@ public class RefrigeratorController {
 								  Model m) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		MemberDTO memberDTO = (MemberDTO) auth.getPrincipal();
-
+		
 		String userid = memberDTO.getUserid();
 		logger.info("CustomLOG[REQUEST]: 냉장고에서 새로운 상품 추가를 요청받음: userid:{}, 상품명:{}, 수량:{}", userid, gName, rStock);
 

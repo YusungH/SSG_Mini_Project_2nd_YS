@@ -6,10 +6,6 @@
 <meta charset="UTF-8">
 <title>메인홈페이지</title>
 <style type="text/css">
-    .App {
-	  text-align: center;
-	  font-size: 16px;
-	}
 	
     label, input, button {
     margin: 10px;
@@ -31,14 +27,8 @@
 	<jsp:include page="common/top.jsp" flush="true" /><br>
      <div class="container">
         <div class="row">
-            <!-- 왼쪽 사이드바 (menu.jsp) -->
-            <div class="col-md-2"> 
-                <jsp:include page="common/menu.jsp" flush="true" />
-            </div>
             <!-- 오른쪽 컨텐츠 (goodsList.jsp) -->
-            <div class="col-md-9">
-                <jsp:include page="refrigerator/refrigeratorList.jsp" flush="true" />
-            </div>
+			<jsp:include page="refrigerator/refrigeratorList.jsp" flush="true" />
         </div>
     </div>
  </div>

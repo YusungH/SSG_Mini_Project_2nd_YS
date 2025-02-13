@@ -7,14 +7,19 @@ import com.exam.dto.RefrigeratorDTO;
 
 public interface GoodsService {
 
-    // 특정 카테고리의 상품 목록 조회
-    public List<GoodsDTO> goodsList(String gCategory);
+	// 특정 카테고리의 상품 목록 조회
+	public List<GoodsDTO> goodsList(String gCategory);
 
-    // 상품 상세 조회
-    public GoodsDTO goodsRetrieve(String gCode);
+	// 상품 상세 조회
+	public GoodsDTO goodsRetrieve(String gCode);
 
-    // 모든 상품의 재고 정보 조회
-    public List<GoodsDTO> getAllStock();
-    
-    public List<RefrigeratorDTO> getAllrStock();
+	// 모든 상품의 재고 정보 조회
+	public List<GoodsDTO> getAllStock();
+
+	public List<RefrigeratorDTO> getAllrStock();
+
+	public void addGoods(GoodsDTO goodsDTO);
+	
+	
+
 }
