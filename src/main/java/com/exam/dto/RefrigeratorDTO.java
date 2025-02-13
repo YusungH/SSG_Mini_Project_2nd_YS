@@ -17,7 +17,6 @@ public class RefrigeratorDTO {
 
 	public RefrigeratorDTO(int num, String userid, String gCode, String gCategory, String gName, int rStock,
 			List<GoodsDTO> goodsList) {
-		super();
 		this.num = num;
 		this.userid = userid;
 		this.gCode = gCode;
@@ -88,7 +87,12 @@ public class RefrigeratorDTO {
 		return "RefrigeratorDTO [num=" + num + ", userid=" + userid + ", gCode=" + gCode + ", gCategory=" + gCategory
 				+ ", gName=" + gName + ", rStock=" + rStock + ", goodsList=" + goodsList + "]";
 	}
+
+	
+}
+	
+    
+	
 	
 	
 
-}

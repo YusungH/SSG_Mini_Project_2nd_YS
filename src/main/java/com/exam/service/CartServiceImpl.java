@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.exam.dto.CartDTO;
 import com.exam.dto.GoodsDTO;
+import com.exam.dto.RefrigeratorDTO;
 import com.exam.mapper.CartMapper;
-
 @Service
 @Transactional
 public class CartServiceImpl implements CartService {
@@ -19,6 +19,23 @@ public class CartServiceImpl implements CartService {
     @Autowired
     public CartServiceImpl(CartMapper mapper) {
         this.mapper = mapper;
+    }
+
+
+    @Override
+    public List<RefrigeratorDTO> getLowrStockItems(String userid) {
+        return mapper.getLowrStockItems(userid);  // 냉장고 재고 부족 아이템
+    }
+
+    // 그 외 다른 메서드들은 그대로 유지
+    @Override
+    public List<GoodsDTO> getAllStock() {
+        return mapper.getAllStock();
+    }
+
+    @Override
+    public List<RefrigeratorDTO> getAllrStock() {
+        return mapper.getAllrStock();
     }
 
     @Override
@@ -40,16 +57,5 @@ public class CartServiceImpl implements CartService {
     public int cartDeleteAll(List<String> list) {
         return mapper.cartDeleteAll(list);
     }
-
-    // 장바구니에 담겨 있는 상품 중에서 재고가 10개 이하인 상품을 확인하는 메서드
-    @Override
-    public List<CartDTO> getLowStockItems(String userid) {
-        // mapper에서 이미 재고 부족 상품을 가져오는 쿼리 처리
-        return mapper.getLowStockItems(userid);
-    }
-
-    @Override
-    public List<GoodsDTO> getAllStock() {
-        return mapper.getAllStock();
-    }
 }
+
